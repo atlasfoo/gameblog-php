@@ -10,11 +10,28 @@
     <header>
         <div id="logo">
             <a href="index.php">
-            <h1>Blog Gaimer</h1>
+                <h1>Blog Gaimer</h1>
             </a>
         </div>
+
+        <!--Menu-->
+        <nav id="nav">
+            <ul>
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li>
+                    <a href="index.html">Categoria</a>
+                </li>
+                <li>
+                    <a href="index.html">Sobre mi</a>
+                </li>
+                <li>
+                    <a href="index.html">Contacto</a>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <!--Menu-->
     <!--Sidebar-->
     <!--Main-->
     <!--Footer-->

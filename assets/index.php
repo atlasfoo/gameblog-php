@@ -76,8 +76,23 @@
                 <h2>Titulo de entrada</h2>
                 <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque odio quaerat aliquid fugiat alias sapiente blanditiis eaque eos impedit magni eum esse placeat culpa sit, vero at dolorem a atque.</p>
             </article>
+            <article class="entrada">
+                <h2>Titulo de entrada</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque odio quaerat aliquid fugiat alias sapiente blanditiis eaque eos impedit magni eum esse placeat culpa sit, vero at dolorem a atque.</p>
+            </article>
+            <article class="entrada">
+                <h2>Titulo de entrada</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque odio quaerat aliquid fugiat alias sapiente blanditiis eaque eos impedit magni eum esse placeat culpa sit, vero at dolorem a atque.</p>
+            </article>
+            <article class="entrada">
+                <h2>Titulo de entrada</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque odio quaerat aliquid fugiat alias sapiente blanditiis eaque eos impedit magni eum esse placeat culpa sit, vero at dolorem a atque.</p>
+            </article>
         </main> 
     </div>
     <!--Footer-->
+    <footer id="pie">
+        <p>Made with love by atlasfoo &copy;</p>
+    </footer>
 </body>
 </html>

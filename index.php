@@ -1,6 +1,6 @@
-<?php require_once 'includes/header.php';?>
+<?php require_once 'includes/header.php'; ?>
 	<div id="contenedor">
-		<?php require_once 'includes/sidebar.php';?>
+		<?php require_once 'includes/sidebar.php'; ?>
 
 		<!--Main-->
 		<main id="principal">
@@ -40,4 +40,4 @@
 		</main>
 		<div class="clearfix"></div>
 	</div>
-	<?php require_once 'includes/footer.php';?>
+	<?php require_once 'includes/footer.php'; ?>

@@ -1,7 +1,7 @@
 <?php 
     $server = 'localhost';
     $username = 'root';
-    $password = '';
+    $password = 'toorlin547';
     $database = 'gameblog';
     $db = mysqli_connect($server, $username, $password, $database);
 

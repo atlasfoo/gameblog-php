@@ -1,4 +1,5 @@
 <?php
+    session_start();
 
     if(isset($_POST['submit'])){
 
@@ -37,6 +38,14 @@
         } else {
             $password_valid = false;
             $errors['password'] = 'La contraseña está vacía o no es válida';
+        }
+
+        if(count($errors) == 0) {
+            //insertar usuario
+            $s = true;
+        } else {
+            $_SESSION['errors'] = $errors;
+            header('Location: index.php');
         }
     }
 

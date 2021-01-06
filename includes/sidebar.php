@@ -28,7 +28,7 @@
             <label for="password">Contraseña</label>
             <input type="password" name="password" />
 
-            <input type="submit" value="Registrarse" />
+            <input type="submit" name="submit" value="Registrarse" />
         </form>
     </section>
 </aside>

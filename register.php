@@ -1,4 +1,6 @@
 <?php
+    require_once 'includes/connection.php';
+
     session_start();
 
     if(isset($_POST['submit'])){
@@ -38,11 +40,24 @@
         } else {
             $password_valid = false;
             $errors['password'] = 'La contraseña está vacía o no es válida';
+            
         }
 
         if(count($errors) == 0) {
+            // cifrar contraseña
+            $password_crypt = password_hash($password, PASSWORD_BCRYPT, ['cost'=>4]);
+            
             //insertar usuario
-            $s = true;
+            $sql = 'INSERT INTO usuarios VALUES(null, $name, $lastname, $email, $password_crypt, CURDATE());';
+
+            $cmd = mysqli_query($db, $sql);
+
+            if($cmd) {
+                $_SESSION['finished'] = 'El registro se ha realizado con exito';
+            } else {
+                $_SESSION['errors']['general'] = 'Fallo al registrar el usuario';
+            }
+            header('Location: index.php');
         } else {
             $_SESSION['errors'] = $errors;
             header('Location: index.php');

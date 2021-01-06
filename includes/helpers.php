@@ -14,3 +14,5 @@ function del_error(){
 
     return $del;
 }
+
+?>

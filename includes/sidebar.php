@@ -5,10 +5,18 @@
     <?php if(isset($_SESSION['user'])): ?>
         <div id="usuario-logeado" class="bloque">
             <h3>Bienvenido, <?=$_SESSION['user']['nombre'].' '.$_SESSION['user']['apellidos']?></h3>
+
+            <a class="boton" href="logout.php">Cerrar Sesión</a>
         </div>
     <?php endif; ?>
+
     <section id="login" class="bloque">
         <h3>Inicia Sesion</h3>
+        <?php if(isset($_SESSION['error_login'])): ?>
+            <div class="alerta alerta-error">
+                <?=$_SESSION['error_login']?>
+            </div>
+        <?php endif; ?>
         <form action="login.php" method="post">
             <label for="email">Email</label>
             <input type="email" name="email" />

@@ -9,9 +9,15 @@ function show_error($errors, $field){
 }
 
 function del_error(){
+    $del = false;
     $_SESSION['errors'] = null;
-    $del = session_unset($_SESSION['errors']);
+    session_unset($_SESSION['errors']);
 
+    if(isset($_SESSION['finished'])){
+        $_SESSION['finished'] = null;   
+        session_unset($_SESSION['finished']);
+    }
+    
     return $del;
 }
 

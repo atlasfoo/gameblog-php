@@ -6,7 +6,10 @@
         <div id="usuario-logeado" class="bloque">
             <h3>Bienvenido, <?=$_SESSION['user']['nombre'].' '.$_SESSION['user']['apellidos']?></h3>
 
-            <a class="boton" href="logout.php">Cerrar Sesión</a>
+            <a class="boton boton-verde" href="new_entry.php">Crear Entrada</a>
+            <a class="boton boton-naranja" href="edit_user.php">Editar Datos</a>
+            <a class="boton" href="edit_user.php">Crear Categoría</a>
+            <a class="boton boton-rojo" href="logout.php">Cerrar Sesión</a>
         </div>
     <?php endif; ?>
 

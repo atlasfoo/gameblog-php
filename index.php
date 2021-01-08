@@ -15,7 +15,7 @@
 				<article class="entrada">
 					<h2><?=$entry['titulo']?></h2>
 					<p>
-						<?=$entry['descripcion']?>
+						<?=substr($entry['descripcion'], 0, 180).'...'?>
 					</p>
 				</article>
 			<?php 

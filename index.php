@@ -13,10 +13,13 @@
 				
 			?>
 				<article class="entrada">
-					<h2><?=$entry['titulo']?></h2>
-					<p>
-						<?=substr($entry['descripcion'], 0, 180).'...'?>
-					</p>
+					<a href="">
+						<h2><?=$entry['titulo']?></h2>
+						<span class="fecha"><?=$entry['categoria'].' | '.$entry['fecha']?></span>
+						<p>
+							<?=substr($entry['descripcion'], 0, 180).'...'?>
+						</p>
+					</a>
 				</article>
 			<?php 
 					endwhile;

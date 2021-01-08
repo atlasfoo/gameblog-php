@@ -31,7 +31,7 @@
     }
 
     function get_last_entries($db){
-        $q = "SELECT e.*, c.* FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id ORDER BY e.id LIMIT 4;";
+        $q = "SELECT e.*, c.nombre as 'categoria' FROM entradas e INNER JOIN categorias c ON e.categoria_id = c.id ORDER BY e.id LIMIT 4;";
 
         $entries = mysqli_query($db, $q);
 

@@ -5,38 +5,25 @@
 		<!--Main-->
 		<main id="principal">
 			<h1>Ultimas entradas</h1>
-			<article class="entrada">
-				<h2>Titulo de entrada</h2>
-				<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
-					odio quaerat aliquid fugiat alias sapiente blanditiis eaque eos
-					impedit magni eum esse placeat culpa sit, vero at dolorem a atque.
-				</p>
-			</article>
-			<article class="entrada">
-				<h2>Titulo de entrada</h2>
-				<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
-					odio quaerat aliquid fugiat alias sapiente blanditiis eaque eos
-					impedit magni eum esse placeat culpa sit, vero at dolorem a atque.
-				</p>
-			</article>
-			<article class="entrada">
-				<h2>Titulo de entrada</h2>
-				<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
-					odio quaerat aliquid fugiat alias sapiente blanditiis eaque eos
-					impedit magni eum esse placeat culpa sit, vero at dolorem a atque.
-				</p>
-			</article>
-			<article class="entrada">
-				<h2>Titulo de entrada</h2>
-				<p>
-					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloremque
-					odio quaerat aliquid fugiat alias sapiente blanditiis eaque eos
-					impedit magni eum esse placeat culpa sit, vero at dolorem a atque.
-				</p>
-			</article>
+			<?php 
+				$entries = get_last_entries($db);
+				
+				if(!empty($entries)):
+					while($entry = mysqli_fetch_assoc($entries)):
+				
+			?>
+				<article class="entrada">
+					<h2><?=$entry['titulo']?></h2>
+					<p>
+						<?=$entry['descripcion']?>
+					</p>
+				</article>
+			<?php 
+					endwhile;
+				endif;
+			?>
+			
+			
 		</main>
 		<div class="clearfix"></div>
 	</div>

@@ -9,8 +9,16 @@
 
     function del_error(){
         $del = false;
-        $_SESSION['errors'] = null;
-        session_unset($_SESSION['errors']);
+
+        if(isset($_SESSION['errors'])){
+            $_SESSION['errors'] = null;
+            session_unset($_SESSION['errors']);
+        }
+
+        if(isset($_SESSION['entry_errors'])){
+            $_SESSION['entry_errors'] = null;
+            session_unset($_SESSION['errors']);
+        }
 
         if(isset($_SESSION['finished'])){
             $_SESSION['finished'] = null;   

@@ -14,20 +14,20 @@ if(isset($_POST)){
         $errors['title'] = 'El titulo esta vacio';
 
     if(empty($description))
-        $errors['title'] = 'La descripcion esta vacia';
+        $errors['description'] = 'La descripcion esta vacia';
 
     if(empty($category) && !is_numeric($category))
-        $errors['title'] = 'La categoria esta vacio';
+        $errors['category'] = 'La categoria esta vacio';
     
     if(count($errors) == 0) {
         $q = "INSERT INTO entradas VALUES(null, $user, $category, '$title', '$description', CURDATE());";
         mysqli_query($db, $q);
+        header('Location: index.php');
     }
     else
     {
         $_SESSION['entry_errors'] = $errors;
+        header('Location: new_entry.php');
     }
 
 }
-
-header('Location: index.php');

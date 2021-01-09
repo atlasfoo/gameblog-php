@@ -8,7 +8,7 @@
 
             <a class="boton boton-verde" href="new_entry.php">Crear Entrada</a>
             <a class="boton boton-naranja" href="edit_user.php">Editar Datos</a>
-            <a class="boton" href="edit_user.php">Crear Categoría</a>
+            <a class="boton" href="new_cat.php">Crear Categoría</a>
             <a class="boton boton-rojo" href="logout.php">Cerrar Sesión</a>
         </div>
     <?php endif; ?>

@@ -4,9 +4,9 @@
 
 		<!--Main-->
 		<main id="principal">
-			<h1>Ultimas entradas</h1>
+			<h1>Todas las entradas</h1>
 			<?php 
-				$entries = get_last_entries($db, true);
+				$entries = get_last_entries($db);
 				
 				if(!empty($entries)):
 					while($entry = mysqli_fetch_assoc($entries)):
@@ -25,9 +25,7 @@
 					endwhile;
 				endif;
 			?>
-			<div id="ver-todas">
-				<a href="entries.php">Ver todas las entradas</a>
-			</div>
+			
 			
 		</main>
 		<div class="clearfix"></div>

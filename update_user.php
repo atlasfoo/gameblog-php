@@ -36,20 +36,31 @@ if(isset($_POST['submit'])){
 
     if(count($errors) == 0) {
         
-        //insertar usuario
-        $sql = "UPDATE usuarios SET nombre='$name', apellidos='$lastname', email='$email' WHERE id=".$_SESSION['user']['id'].";";
+        //comprobar si el email existe
+        $q = "SELECT id, email FROM usuarios WHERE email='$email'";
 
-        $cmd = mysqli_query($db, $sql);
+        $isset_email = mysqli_query($db, $q);
 
-        if($cmd) {
-            $_SESSION['user']['nombre'] = $name;
-            $_SESSION['user']['apellidos'] = $lastname;
-            $_SESSION['user']['email'] = $email;
-            $_SESSION['finished'] = 'La actualizacion se ha realizado con exito';
+        $isset_user = mysqli_fetch_assoc($isset_email);
+        if($isset_user['id'] == $_SESSION['user']['id'] || empty($isset_user)){
+
+            //insertar usuario
+            $sql = "UPDATE usuarios SET nombre='$name', apellidos='$lastname', email='$email' WHERE id=".$_SESSION['user']['id'].";";
+
+            $cmd = mysqli_query($db, $sql);
+
+            if($cmd) {
+                $_SESSION['user']['nombre'] = $name;
+                $_SESSION['user']['apellidos'] = $lastname;
+                $_SESSION['user']['email'] = $email;
+                $_SESSION['finished'] = 'La actualizacion se ha realizado con exito';
+            } else {
+                $_SESSION['errors']['general'] = 'Fallo al registrar el usuario';
+            }
+            header('Location: index.php');
         } else {
-            $_SESSION['errors']['general'] = 'Fallo al registrar el usuario';
+            $_SESSION['errors']['general'] = 'Este correo ya esta registrado';
         }
-        header('Location: index.php');
     } else {
         $_SESSION['errors'] = $errors;
         header('Location: edit_user.php');
